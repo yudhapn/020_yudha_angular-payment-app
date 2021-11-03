@@ -1,0 +1,25 @@
+<div class="login-page">
+  <mat-card class="mat-elevation-z12">
+    <mat-card-title style="text-align: center; margin-top: 8px"
+      >Authentication</mat-card-title
+    >
+    <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+      <mat-tab label="Sign In">
+        <app-login
+          [isSubmitted]="isSubmitted"
+          (onLoginEvent)="login($event)"
+        ></app-login>
+      </mat-tab>
+      <mat-tab label="Sign Up">
+        <app-register
+          [isSubmitted]="isSubmitted"
+          (onRegisterEvent)="register($event)"
+        ></app-register>
+      </mat-tab>
+    </mat-tab-group>
+    <mat-progress-bar
+      *ngIf="isProgressbarVisible"
+      mode="indeterminate"
+    ></mat-progress-bar>
+  </mat-card>
+</div>

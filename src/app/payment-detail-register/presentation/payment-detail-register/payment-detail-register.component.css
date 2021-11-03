@@ -1,0 +1,54 @@
+.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  padding: 16px;
+  flex: 1;
+}
+
+.example-form {
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-half-width {
+  width: 50%;
+}
+
+table {
+  width: 100%;
+}
+
+.table-container {
+  margin: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container {
+  padding: 18px;
+  margin: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.red-icon {
+  color: red;
+}
+
+th.mat-header-cell.header-action {
+  text-align: center !important;
+}
+
+td.mat-cell.cell-action {
+  text-align: center !important;
+}
+
+.table-spinner {
+  align-self: center;
+  margin-top: 16px;
+}
