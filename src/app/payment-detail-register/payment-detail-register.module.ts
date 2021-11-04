@@ -25,6 +25,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [PaymentDetailRegisterComponent],
@@ -45,6 +46,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatCardModule,
     MatPaginatorModule,
     MatSortModule,
+    MatDialogModule,
   ],
   providers: [
     httpInterceptorProviders,

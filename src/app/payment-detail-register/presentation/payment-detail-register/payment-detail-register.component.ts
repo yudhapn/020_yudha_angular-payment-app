@@ -6,6 +6,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteConfirmationDialogComponent } from 'src/app/core/presentation/delete-confirmation-dialog/delete-confirmation-dialog.component';
 
 @Component({
   selector: 'app-payment-detail-register',
@@ -15,7 +17,8 @@ import { MatSort } from '@angular/material/sort';
 export class PaymentDetailRegisterComponent implements OnInit, AfterViewInit {
   constructor(
     private viewModel: PaymentDetailRegisterViewModel,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) {}
 
   displayedColumns: string[] = [
@@ -177,5 +180,19 @@ export class PaymentDetailRegisterComponent implements OnInit, AfterViewInit {
       this.inputPaymentData.controls[key].setErrors(null);
     });
     this.isUpdateMode = false;
+  }
+
+  openDeleteEmployeeDialog(paymentDetail: any) {
+    const dialogRef = this.dialog.open(DeleteConfirmationDialogComponent, {
+      data: {
+        paymentDetail: paymentDetail,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+      if (result) {
+        this.deletePaymentDetail(paymentDetail.paymentDetailId);
+      }
+    });
   }
 }
